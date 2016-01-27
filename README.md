@@ -254,6 +254,22 @@
     }
     ```
 
+  * <a name="2.5" href="#2.5">2.5</a>.
+    Assign the result of expensive functions to a variable to avoid unnecessary recalculation.
+
+    ```js
+    // Bad
+    if (expensiveOperation()) {
+        console.log('Result: ' + expensiveOperation());
+    }
+
+    // Good
+    const result = expensiveOperation();
+    if (result) {
+        console.log('Result: ' + result);
+    }
+    ```
+
 ## 3. Naming
 
   * <a name="3.1" href="#3.1">3.1</a>.
