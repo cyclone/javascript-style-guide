@@ -1627,3 +1627,19 @@
         throw new Error('Result is not valid');
     }
     ```
+
+  * <a name="25.2" href="#25.2">25.2</a>.
+    Do not prepend `Error: ` to error messages, or any similar label.
+
+    ```js
+    // Bad
+    const err = new Error('ValidationError: Result is not valid');
+    console.error(err.toString());
+    // => Error: ValidationError: Result is not valid
+
+    // Good
+    const err = new Error('Result is not valid');
+    err.name = 'ValidationError';
+    console.error(err.toString());
+    // => ValidationError: Result is not valid
+    ```
