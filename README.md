@@ -26,6 +26,7 @@
 22. [Switch statement](#22-switch-statement)
 23. [With statement](#23-with-statement)
 24. [Promises](#24-promises)
+25. [Errors](#25-errors)
 
 ## 1. Whitespace
 
@@ -1565,4 +1566,29 @@
         })
         // Handles the above error
         .catch((err) => console.error(err));
+    ```
+
+## 25. Errors
+
+  * <a name="25.1" href="#25.1">25.1</a>.
+    Always throw error objects, never strings or any other object type.
+
+    ```js
+    // Bad
+    if (!valid) {
+        throw 'Result is not valid';
+    }
+
+    // Bad
+    if (!valid) {
+        throw {
+            name: 'TypeError',
+            message: 'Result is not valid',
+        };
+    }
+
+    // Good
+    if (!valid) {
+        throw new Error('Result is not valid');
+    }
     ```
