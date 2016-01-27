@@ -1273,6 +1273,18 @@
         }
     }
 
+    // Bad
+    function handleCondition (condition) {
+        if (!condition) {
+            return;
+        }
+        else {
+            foo();
+            bar();
+            baz();
+        }
+    }
+
     // Good
     function handleCondition (condition) {
         if (!condition) {
