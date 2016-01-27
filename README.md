@@ -1603,6 +1603,29 @@
     }
     ```
 
+  * <a name="24.3" href="#24.3">24.3</a>.
+    Always exit after resolving/rejecting a promise.
+
+    ```js
+    // Bad
+    new Promise((resolve, reject) => {
+        if (!valid) {
+            reject(new Error('Result is not valid'));
+        }
+        // Always called
+        accept(expensiveOperation());
+    });
+
+    // Good
+    new Promise((resolve, reject) => {
+        if (!valid) {
+            return reject(new Error('Result is not valid'));
+        }
+        // Only called if valid
+        accept(expensiveOperation());
+    });
+    ```
+
 ## 25. Errors
 
   * <a name="25.1" href="#25.1">25.1</a>.
