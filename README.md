@@ -1568,6 +1568,41 @@
         .catch((err) => console.error(err));
     ```
 
+  * <a name="24.2" href="#24.2">24.2</a>.
+    Always reject promises with error objects, never strings or any other object type.
+
+    ```js
+    // Bad
+    /** @return {Promise} */
+    function getData (valid) {
+        if (!valid) {
+            return Promise.reject('Result is not valid');
+        }
+        // ...
+    }
+
+    // Bad
+    /** @return {Promise} */
+    function getData (valid) {
+        if (!valid) {
+            return Promise.reject({
+                name: 'TypeError',
+                message: 'Result is not valid',
+            });
+        }
+        // ...
+    }
+
+    // Good
+    /** @return {Promise} */
+    function getData (valid) {
+        if (!valid) {
+            return Promise.reject(new Error('Result is not valid'));
+        }
+        // ...
+    }
+    ```
+
 ## 25. Errors
 
   * <a name="25.1" href="#25.1">25.1</a>.
