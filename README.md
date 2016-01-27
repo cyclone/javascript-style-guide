@@ -720,7 +720,7 @@
     **Note**: You may be able to use other operators to achieve the intended result:
 
     ```js
-    const x = 10; // 0b1010
+    const x = 1; // 0b1
 
     // Bitshift left 5 places
     x << 5;              // 0b100000
