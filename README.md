@@ -1260,6 +1260,30 @@
 
     ['Rest parameters' on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
 
+  * <a name="15.8" href="#15.8">15.8</a>.
+    Exit early from a function where possible. Avoid nesting the majority of a function's logic in an `if` condition.
+
+    ```js
+    // Bad
+    function handleCondition (condition) {
+        if (condition) {
+            foo();
+            bar();
+            baz();
+        }
+    }
+
+    // Good
+    function handleCondition (condition) {
+        if (!condition) {
+            return;
+        }
+        foo();
+        bar();
+        baz();
+    }
+    ```
+
 ## 16. Arrow functions
 
   * <a name="16.1" href="#16.1">16.1</a>.
