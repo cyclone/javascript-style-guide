@@ -1639,6 +1639,37 @@
     return Promise.resolve('Hello world');
     ```
 
+  * <a name="24.5" href="#24.5">24.5</a>.
+    Functions that _can_ return promises should _always_ return promises.
+
+    ```js
+    // Bad
+    function getFoobar (condition) {
+        if (condition) {
+            return Promise.all([
+                getFoo(),
+                getBar(),
+            ]);
+        }
+        return null;
+    }
+    getFoobar(false).then((res) => console.log(res));
+    // Uncaught TypeError: Cannot read property 'then' of null
+
+    // Good
+    function getFoobar (condition) {
+        if (condition) {
+            return Promise.all([
+                getFoo(),
+                getBar(),
+            ]);
+        }
+        return Promise.resolve(null);
+    }
+    getFoobar(false).then((res) => console.log(res));
+    // => null
+    ```
+
 ## 25. Errors
 
   * <a name="25.1" href="#25.1">25.1</a>.
