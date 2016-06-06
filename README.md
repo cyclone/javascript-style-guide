@@ -1526,6 +1526,35 @@
     return items;
     ```
 
+  * <a name="19.6" href="#19.6">19.6</a>.
+    Correlary to [19.3](#19.3), [19.4](#19.4) and [19.5](#19.5): Do not nest ternary statements; instead use an `if`/`else if`/`else` pattern.
+
+    ```js
+    // Bad
+    return isFooRequired && isBarRequired ? [foo, bar] : isFooRequired ? [foo] : isBarRequired ? [bar] : [];
+
+    // Better
+    if (isFooRequired && isBarRequired) {
+        return [foo, bar];
+    } else if (isFooRequired) {
+        return [foo];
+    } else if (isBarRequired) {
+        return [bar];
+    } else {
+        return [];
+    }
+
+    // Best
+    const result = [];
+    if (isFooRequired) {
+        result.push(foo);
+    }
+    if (isBarRequired) {
+        result.push(bar);
+    }
+    return result;
+    ```
+
 ## 20. For loops
 
 ## 21. While loops
