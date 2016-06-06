@@ -1294,8 +1294,7 @@
     function handleCondition (condition) {
         if (!condition) {
             return;
-        }
-        else {
+        } else {
             foo();
             bar();
             baz();
@@ -1452,7 +1451,7 @@
     ```
 
   * <a name="19.2" href="#19.2">19.2</a>.
-    You may put `else` and `else if` on the same line as a closing brace if you like. I prefer closing braces on their own line -- just because you can add a comment for the whole `else` block that does not reside in the previous `if` block. Really either way is fine.
+    Put `else` and `else if` on the same line as the closing brace from the previous block. This is called ["the one true brace style" (1TBS)](https://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS).
 
     ```js
     // Check if user input is valid
@@ -1460,16 +1459,6 @@
         saveValue(userInput);
     // Otherwise reset the value
     } else {
-        userInput = null;
-        valueEntered = false;
-    }
-
-    // Check if user input is valid
-    if (valueEntered && userInput.length > 0) {
-        saveValue(userInput);
-    }
-    // Otherwise reset the value
-    else {
         userInput = null;
         valueEntered = false;
     }
@@ -1483,8 +1472,7 @@
     function getFoo () {
         if (foo) {
             return 'foo';
-        }
-        else {
+        } else {
             return 'bar';
         }
     }
@@ -1511,8 +1499,7 @@
     function getFoo () {
         if (foo) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
