@@ -1626,6 +1626,19 @@
     });
     ```
 
+  * <a name="24.4" href="#24.4">24.4</a>.
+    Use `Promise.resolve()` or `Promise.reject()` instead of creating a new `Promise` instance and resolving/rejecting it immediately.
+
+    ```js
+    // Bad
+    return new Promise((resolve, reject) => {
+        resolve('Hello world');
+    });
+
+    // Good
+    return Promise.resolve('Hello world');
+    ```
+
 ## 25. Errors
 
   * <a name="25.1" href="#25.1">25.1</a>.
