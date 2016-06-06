@@ -1532,7 +1532,9 @@
 ## 23. With statement
 
   * <a name="23.1" href="#23.1">23.1</a>.
-    No.
+    Do not use `with`. It has been deprecated for years and is forbidden in strict mode.
+
+    [`with` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with). [`with` on 2ality](http://www.2ality.com/2011/06/with-statement.html).
 
 ## 24. Promises
 
