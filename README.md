@@ -1510,6 +1510,22 @@
     }
     ```
 
+  * <a name="19.5" href="#19.5">19.5</a>.
+    Correlary to [19.3](#19.3) and [19.4](#19.4): Do not use a ternary for complex conditions/statements.
+
+    ```js
+    // Bad
+    return type === 'foo' ? items.filter((item) => item.type === 'foo') : items;
+
+    // Good
+    if (type === 'foo') {
+        return items.filter((item) => {
+            return item.type === 'foo';
+        });
+    }
+    return items;
+    ```
+
 ## 20. For loops
 
 ## 21. While loops
