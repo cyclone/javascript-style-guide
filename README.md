@@ -1557,6 +1557,23 @@
 
 ## 20. For loops
 
+  * <a name="20.1" href="#20.1">20.1</a>.
+    Do not initialize anything but a counter variable in a `for` statement.
+
+    ```js
+    // Bad
+    for (let i = 0, arr = this.getResults(), len = arr.length; i < len; i++) {
+        console.log(i, arr[i]);
+    }
+
+    // Good
+    const arr = this.getResults();
+    const len = arr.length;
+    for (let i = 0; i < len; i++) {
+        console.log(i, arr[i]);
+    }
+    ```
+
 ## 21. While loops
 
 ## 22. Switch statement
