@@ -1574,6 +1574,25 @@
     }
     ```
 
+  * <a name="20.2" href="#20.2">20.2</a>.
+    Avoid using `for..in` loops. There are usually better ways of doing the same thing.
+
+    ```js
+    // Bad
+    const obj = { foo: 'bar' };
+    for (let key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+            console.log(key, obj[key]);
+        }
+    }
+
+    // Good
+    const obj = { foo: 'bar' };
+    Object.keys(obj).forEach((key) => {
+        console.log(key, obj[key]);
+    });
+    ```
+
 ## 21. While loops
 
 ## 22. Switch statement
