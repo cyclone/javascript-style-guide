@@ -1595,6 +1595,31 @@
 
 ## 21. While loops
 
+  * <a name="21.1" href="#21.1">21.1</a>.
+    Avoid `do..while` loops. There are usually better ways of doing the same thing. Where possible, use a regular `while` loop instead.
+
+    ```js
+    // Bad
+    const arr = ['foo', 'bar', 'baz'];
+    let item = arr.shift();
+    do {
+        console.log(item);
+        item = arr.shift();
+    } while (item);
+    // => "foo"
+    // => "bar"
+    // => "baz"
+
+    // Good
+    const arr = ['foo', 'bar', 'baz'];
+    while (arr.length) {
+        console.log(arr.shift());
+    }
+    // => "foo"
+    // => "bar"
+    // => "baz"
+    ```
+
 ## 22. Switch statement
 
 ## 23. With statement
