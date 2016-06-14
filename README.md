@@ -28,6 +28,15 @@
 24. [Promises](#24-promises)
 25. [Errors](#25-errors)
 
+## Linting
+
+This style guide is available as an [ESLint](http://eslint.org/) shareable config module called [eslint-config-luxjs](https://github.com/luxbet/eslint-config-luxjs) for automatic code style validation.
+
+Linting plugins are available in many editors:
+* [Sublime text](https://github.com/roadhump/SublimeLinter-eslint)
+* [Atom](https://github.com/AtomLinter/linter-eslint)
+* [VSCode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
 ## 1. Whitespace
 
   * <a name="1.1" href="#1.1">1.1</a>.
